@@ -3,7 +3,7 @@ window.addEventListener("load", async function fetchData() {
     const response = await fetch('https://handlers.education.launchcode.org/static/astronauts.json');
     const data = await response.json();
     console.log(data);
-
+    // function to sort astronauts by hours in space
     for (let i = 0; i < data.length; i++) {
         if (data[i].active === true) {
             container.innerHTML += `
