@@ -2,6 +2,7 @@
 window.addEventListener("load", async function fetchData() {
     const response = await fetch('https://handlers.education.launchcode.org/static/astronauts.json');
     const data = await response.json();
+    const data2 = [];
     console.log(data);
     // function to sort astronauts by hours in space
     for (let i = 0; i < data.length; i++) {
@@ -13,7 +14,7 @@ window.addEventListener("load", async function fetchData() {
                 <ul>
                     <li>Hours in Space: ${data[i].hoursInSpace}</li>
                     <li id="text-color">Active: ${data[i].active}</li>
-                    <li>Skills: ${data[i].skills}</li>
+                    <li>Skills: ${data[i].skills.join(", ")}</li>
                 </ul>
             </div>
             <img class="avatar" src="${data[i].picture}" alt="Astronaut">
@@ -27,7 +28,7 @@ window.addEventListener("load", async function fetchData() {
                 <ul>
                     <li>Hours in Space: ${data[i].hoursInSpace}</li>
                     <li>Active: ${data[i].active}</li>
-                    <li>Skills: ${data[i].skills}</li>
+                    <li>Skills: ${data[i].skills.join(", ")}</li>
                 </ul>
             </div>
             <img class="avatar" src="${data[i].picture}" alt="Astronaut">
